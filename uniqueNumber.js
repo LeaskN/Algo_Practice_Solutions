@@ -9,8 +9,6 @@ function findUniq(arr) {
     next = arr[i+1];
     if(current !== last && current !== next){
       unique = current;
-    } else {
-      unique = unique;
     }
   };
   return unique;
