@@ -1,17 +1,3 @@
-// function sumOfThrees(n) {
-//   let num = 0;
-//   let finalString = ""
-//   for (i = 0; i < n; i++) {
-//     num += 3**i
-//     finalString = `3^${i}+` + finalString
-//     if (num === n) {
-//       return finalString.slice(0, -1)
-//     }
-    
-//   }
-//   return finalString;
-// }
-
 function sumOfThrees(n) {
   
   let currentNumber = n;
