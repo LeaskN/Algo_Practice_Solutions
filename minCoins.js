@@ -11,7 +11,7 @@ let minCoins  = function (change){
     let coinCountSecond = Math.floor(change/coinType[1]);
     if(change < 10){
         return "Used " + change + " coins.";
-    } else if ( change > 50){
+    } else if ( change >= 50){
         return startWithFirst(change, coinCount, coinType);
     } 
     else {
@@ -48,6 +48,6 @@ console.log(minCoins(31));
 console.log(minCoins(26));
 console.log(minCoins(0));
 console.log(minCoins(30));
-console.log(minCoins(73));
+console.log(minCoins(50));
 console.log(minCoins(27));
 console.log(minCoins(52527));
