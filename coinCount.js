@@ -14,8 +14,8 @@ let coinCounting  = function (change){
     }
 }
 
-// console.log(coinCounting(66));
+console.log(coinCounting(66));
 console.log(coinCounting(31));
-// console.log(coinCounting(26));
-// console.log(coinCounting(30));
-// console.log(coinCounting(73));
+console.log(coinCounting(26));
+console.log(coinCounting(30));
+console.log(coinCounting(73));
