@@ -28,39 +28,6 @@ function pickPeaks(arr){
     }
   return obj;
 }
-
-function pickPeaks(arr){
-    var obj = {pos:[],peaks:[]};
-    for (var i = 1; i < arr.length-1; i ++) {
-        //if the current number is higher than previous and higher than the next one, it's the peak
-        if (arr[i] > arr[i-1] && arr[i] > arr[i+1]){
-            obj.pos.push(i);
-            obj.peaks.push(arr[i]);
-        //if current number is higher than the previous and equal to the next
-        } else if (arr[i] > arr[i-1] && arr[i] === arr[i+1]) {
-            //save the position and value of this in a temporary variable
-            var temp = [];
-            temp.push(i);
-            temp.push(arr[i]);
-            console.log(temp);
-            //check the next one to see if it's higher than the one after, equal to the next one, or higher than the previous one
-            for (var j = i+1; j < arr.length-1; j++) {
-            //if it is higher than the next one, return the saved first repeating number
-            //3,3,4,5,3
-                if (arr[j] > arr[j+1]) {
-                    obj.pos.push(temp[0]);
-                    obj.peaks.push(temp[1]);
-                    //if the last one is higher, break out
-                    break;
-                } else if (arr[j] < arr[j+1]) {
-                    //if the next one is higher, break out
-                    break;
-                } 
-            }
-        }
-    }
-    return obj;
-  }
 console.log(pickPeaks([ 1, 2, 5, 4, 3, 2, 3, 6, 4, 1, 2, 3, 3, 4, 5, 3, 2, 1, 2, 3, 5, 5, 4, 3 ]));// { pos: [ 2, 7, 14, 20 ], peaks: [ 5, 6, 5, 5 ] }
 console.log(pickPeaks([1,1,1,1]));//,{pos:[],peaks:[]});
 console.log(pickPeaks([ 2,0,12,-2,1,1,8,15,1,-2,14,5,15,-2,13,10,4,13,9,11,2,5,-2,9,6,8,6,5,-1,1,13,5,13,9,2,5,-1,0 ]));
