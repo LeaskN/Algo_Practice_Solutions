@@ -18,3 +18,5 @@ function getIssuer(number) {
   } 
   return "Unknown";
 }
+
+//test with real card!
