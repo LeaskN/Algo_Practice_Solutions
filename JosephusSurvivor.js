@@ -1,5 +1,5 @@
 function josephusSurvivor(a, b){
-    let arr = []
+    let arr = [];
     let eliminator = 0;
     //create our array
     for(let i = 1; i < a+1; i++){
@@ -16,8 +16,8 @@ function josephusSurvivor(a, b){
       }
       arr.splice(eliminator,1);
     }
-    return arr[0]
-  }
+    return arr[0];
+}
 
 console.log(josephusSurvivor(7,3)); // 4
 console.log(josephusSurvivor(11,19)); // 10
