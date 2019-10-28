@@ -9,7 +9,7 @@ function spinWords(phrase){
         //look for words 5 letters or longer
         if (word.length >= 5){
             backWord = [];
-            //iterate backwards over the letters and create a new word
+            //iterate backwards over the letters and create a new word 
             for (let i = word.length -1 ; i >= 0; i--) {                
                 const letter = word[i];
                 backWord.push(letter);
