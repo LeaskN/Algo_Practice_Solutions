@@ -12,46 +12,36 @@ Brute force:
 */
 const longestPalindromicSubstring = function(str){
     if(str.length === 1) return str;
-    let m = str[0]; // max
+    let m = str[0];
 
-    for(let i = 0; i < str.length; i++){
-        let l = i;
-        let r = i+1;
+    for(let i = 0; i < str.length-1; i++){
         let p = false;
         let palStr = '';
-        // if they are the same move to next letters
-        if(str[l] === str[r] && str[r]){
-            p = true;
-            while(p){
-                palStr = str[l] + palStr;
-                palStr += str[r];
-                r++;
-                l--;
-                if(str[l] !== str[r] || str[r] === undefined) p = false;
-            }
-            if (palStr.length > m.length) m = palStr;
-        }
-        r = i+2
-        console.log(str[l] === str[r] && str[r])
-        if(str[l] === str[r] && str[r]){
-            console.log(str[l], str[r]);
 
-            palStr = str[i+1];
-            p = true;
-            while(p){
-                palStr = str[l] + palStr;
-                palStr += str[r];
-                r++;
-                l--;
-                if(str[l] !== str[r] || str[r] === undefined) p = false;
+        const makePal = function (l, r, str){
+            if(str[l] === str[r]){
+                if(r-l === 2) {
+                    palStr = str[i+1]
+                };
+                p = true;
+                while(p){
+                    palStr = str[l] + palStr;
+                    palStr += str[r];
+                    r++;
+                    l--;
+                    if(str[l] !== str[r] || str[r] === undefined) p = false;
+                }
+                if (palStr.length > m.length) m = palStr;
             }
-            if (palStr.length > m.length) m = palStr;
+            return m;
         }
+        m = makePal(i, i+1, str);
+        m = makePal(i, i+2, str);
     }
     return m;    
 }
 
-// console.log(longestPalindromicSubstring('abcdefghijklmoomlkjpqrstuv'));
-// console.log(longestPalindromicSubstring('babad'));
-// console.log(longestPalindromicSubstring('bb'));
-console.log(longestPalindromicSubstring('ccc'));
+console.log(longestPalindromicSubstring('abcdefghijklmoomlkjpqrstuv')); // jklmoomlkj
+console.log(longestPalindromicSubstring('babad')); // bab
+console.log(longestPalindromicSubstring('bb')); // bb
+console.log(longestPalindromicSubstring('ccc'));// ccc
